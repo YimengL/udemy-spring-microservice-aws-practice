@@ -22,8 +22,13 @@ Run com.in28minutes.microservices.currencyconversionservice.CurrencyConversionSe
 docker container run --publish 8000:8000 in28min/aws-currency-exchange-service-h2:0.0.1-SNAPSHOT
 ```
 #### Custom Network
+需要创建network
+```bash
+$ docker network create currency-network
 ```
-docker run --publish 8000:8000 --network currency-network --name=currency-exchange-service in28min/aws-currency-exchange-service-h2:0.0.1-SNAPSHOT
+
+```
+docker run --publish 8000:8000 --network currency-network --name=currency-exchange-service rocklee/aws-currency-exchange-service-h2:0.0.1-SNAPSHOT
 ```
 
 Test API 
